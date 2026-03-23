@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { margin: 0; overflow: hidden; background: #000; }
+canvas { display: block; }
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script>
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let mouse = { x: canvas.width/2, y: canvas.height/2 };
+let time = 0;
+
+canvas.addEventListener('mousemove', (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+});
+
+function drawWave(yOffset, amplitude, frequency, speed, color) {
+    ctx.beginPath();
+    ctx.moveTo(0, canvas.height);
+    
+    for (let x = 0; x < canvas.width; x++) {
+        const distanceFromMouse = Math.abs(x - mouse.x);
+        const mouseEffect = Math.max(0, 1 - distanceFromMouse / 300) * 50;
+        
+        const y = yOffset + 
+                  Math.sin(x * frequency + time * speed) * amplitude +
+                  Math.sin(x * frequency * 2 + time * speed * 1.5) * (amplitude / 2) +
+                  mouseEffect * Math.sin(time * 3);
+        
+        ctx.lineTo(x, y);
+    }
+    
+    ctx.lineTo(canvas.width, canvas.height);
+    ctx.closePath();
+    
+    const gradient = ctx.createLinearGradient(0, yOffset - amplitude, 0, canvas.height);
+    gradient.addColorStop(0, color);
+    gradient.addColorStop(1, 'transparent');
+    ctx.fillStyle = gradient;
+    ctx.fill();
+}
+
+function animate() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    drawWave(canvas.height/2 + 50, 60, 0.01, 0.02, 'rgba(0, 255, 255, 0.3)');
+    drawWave(canvas.height/2 + 100, 80, 0.008, 0.015, 'rgba(255, 0, 255, 0.3)');
+    drawWave(canvas.height/2 + 150, 100, 0.005, 0.01, 'rgba(255, 255, 0, 0.3)');
+    
+    time += 0.05;
+    requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+</body>
+</html>

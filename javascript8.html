@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+#energizer-btn {
+    position: absolute;
+    padding: 20px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #ff006e, #8338ec);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 30px rgba(255, 0, 110, 0.6);
+    transition: transform 0.1s;
+    z-index: 100;
+}
+#energizer-btn:active {
+    transform: scale(0.9);
+}
+.note {
+    position: absolute;
+    font-size: 40px;
+    animation: float 2s ease-out forwards;
+    pointer-events: none;
+}
+@keyframes float {
+    0% { transform: translateY(0) scale(0); opacity: 1; }
+    50% { transform: translateY(-100px) scale(1.2); opacity: 1; }
+    100% { transform: translateY(-200px) scale(1); opacity: 0; }
+}
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: explode 1s ease-out forwards;
+}
+@keyframes explode {
+    0% { transform: translate(0, 0) scale(1); opacity: 1; }
+    100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+}
+</style>
+</head>
+<body>
+<button id="energizer-btn">⚡ ENERGIZE! ⚡</button>
+
+<script>
+const btn = document.getElementById('energizer-btn');
+const notes = ['⚡', '🔥', '💥', '✨', '🌟', '💫', '⚡️', '🔋', '🚀', '💪', '⭐', '🎯'];
+const colors = ['#ff006e', '#8338ec', '#

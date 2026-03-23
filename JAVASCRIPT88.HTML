@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Time Greeting</title>
+</head>
+<body>
+    <button onclick="showGreeting()">Get Greeting</button>
+    <h2 id="greeting"></h2>
+
+    <script>
+        function showGreeting() {
+            const hour = new Date().getHours();
+            let message;
+            
+            if (hour < 12) {
+                message = "Good morning po! 🌅";
+            } else if (hour < 18) {
+                message = "Good afternoon po! ☀️";
+            } else {
+                message = "Good evening po! 🌙";
+            }
+            
+            document.getElementById("greeting").innerHTML = message;
+        }
+    </script>
+</body>
+</html>

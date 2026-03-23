@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My List</title>
+</head>
+<body>
+    <input type="text" id="newItem" placeholder="Type something...">
+    <button onclick="addItem()">Add to List</button>
+    
+    <ul id="myList">
+        <li>Buy milk</li>
+    </ul>
+
+    <script>
+        function addItem() {
+            const text = document.getElementById("newItem").value;
+            
+            if (text !== "") {
+                const newItem = document.createElement("li");
+                newItem.innerHTML = text;
+                document.getElementById("myList").appendChild(newItem);
+                
+                // Clear the input
+                document.getElementById("newItem").value = "";
+            }
+        }
+    </script>
+</body>
+</html>

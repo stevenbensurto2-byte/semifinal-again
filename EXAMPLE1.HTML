@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index-Semi Final</title>
+    <style>
+        /* ===== AI SAID THIS REMOVE DEFAULT SPACING FROM BROWSER ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ===== BODY - THE MAIN BACKGROUND ===== */
+        body {
+            font-family: Arial, sans-serif;  /* IISANG FONT NA LNG ANG HIRAP MAG DECIDE HAHA */
+            background: linear-gradient(to bottom, #87CEEB 0%, #E0F6FF 50%, #ffffff 100%);
+            min-height: 100vh;  /* Makes background cover full screen */
+        }
+
+        /* ===== NAVIGATION BAR =====
+           White bar at top with blue border */
+        nav {
+            background-color: #E0F6FF;
+            border-bottom: 2px solid #4299e1;
+            padding: 20px;
+            overflow: hidden;  /* Clears the float */
+        }
+
+        /* Logo on the left side */
+        .logo {
+            float: left;
+            font-size: 18px;
+            color: #2c5282;
+            font-weight: bold;
+        }
+
+        /* Navigation links container */
+        .nav-links {
+            float: right;
+            list-style: none;  /* Removes bullet points */
+        }
+
+        /* Each navigation item */
+        .nav-links li {
+            display: inline-block;  /* Makes them horizontal */
+            margin-left: 20px;
+        }
+
+        /* Navigation links styling */
+        .nav-links a {
+            text-decoration: none;  /* Removes underline */
+            color: #2c5282;
+            font-weight: bold;
+        }
+
+        /* When you hover over links */
+        .nav-links a:hover {
+            color: #4299e1;
+            text-decoration: underline;
+        }
+
+        /* ===== MAIN CONTAINER =====
+           Centers your content in the middle of page */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;  /* 0 top/bottom, auto left/right = centered */
+            padding: 20px;
+        }
+
+        /* ===== WHITE BOX STYLE =====
+           This is the white box that holds content */
+        .box {
+            background-color: white;
+            border: 2px solid #4299e1;
+            padding: 40px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        /* ===== HOME PAGE STYLES ===== */
+		.big-title {
+			font-size: 80px;
+			color: #2c5282;
+			margin: 40px 0;
+			letter-spacing: 10px;
+		}
+
+		.subtitle {
+			font-size: 24px;
+			color: #4a5568;
+			margin-bottom: 40px;
+		}
+
+		/* Tech buttons (HTML, CSS, JS) */
+		.tech-buttons {
+			margin-top: 40px;
+		}
+
+		.tech-btn {
+			display: inline-block;
+			background-color: white;
+			border: 2px solid #2c5282;
+			color: #2c5282;
+			padding: 15px 40px;
+			margin: 0 20px;
+			text-decoration: none;
+			font-weight: bold;
+		}
+
+		.tech-btn:hover {
+			background-color: #4299e1;
+			color: white;
+		}
+
+		/* ===== DESIGN BOX WITH BACKGROUND IMAGE ===== */
+		.design-box {
+			background-image: url('blue2.jpg');  /* Your blue wave image */
+			background-size: cover;              /* Makes image cover whole box */
+			background-position: center;         /* Centers the image */
+			background-repeat: no-repeat;        /* Don't repeat the image */
+			border: 3px solid #2c5282;          /* Dark blue border */
+			padding: 60px 40px;
+			margin: 20px 0;
+			text-align: center;
+			border-radius: 10px;                 /* Slightly rounded corners */
+			box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Soft shadow */
+		}
+
+		/* Make title white with shadow so it's visible on blue background */
+		.design-box .big-title {
+			color: white;
+			text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Darker shadow for readability */
+			margin: 40px 0;
+			letter-spacing: 10px;
+			font-size: 80px;
+		}
+		
+		/* Make subtitle white too */
+		.design-box .subtitle {
+			color: white;
+			text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+			margin-bottom: 40px;
+			font-size: 24px;
+		}
+
+		/* Make tech buttons stand out on blue background */
+		.design-box .tech-btn {
+			display: inline-block;
+			background-color: rgba(255,255,255,0.95); /* White background */
+			border: 2px solid #2c5282;
+			color: #2c5282;
+			padding: 15px 40px;
+			margin: 0 20px;
+			text-decoration: none;
+			font-weight: bold;
+		}
+
+		.design-box .tech-btn:hover {
+			background-color: #2c5282;
+			color: white;
+			border: 2px solid white;
+		}
+
+        /* ===== ABOUT PAGE STYLES ===== */
+        .about-box {
+            overflow: hidden;  /* Clears float */
+            text-align: left;
+        }
+
+        /* Picture box on the left */
+        .picture-box {
+            width: 250px;
+            height: 400px;
+            background-color: #f7fafc;
+            border: 2px dashed #4299e1;
+            float: left;
+            margin-right: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* This makes text vertical */
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-size: 40px;
+            color: #718096;
+        }
+
+        .info-section h2 {
+            color: #2c5282;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #4299e1;
+            padding-bottom: 10px;
+        }
+
+        .info-list {
+            list-style: none;
+            line-height: 2.5;
+            font-size: 18px;
+        }
+
+        .info-list strong {
+            color: #2c5282;
+            display: inline-block;
+            width: 150px;
+        }
+
+        /* ===== ARCHIVE PAGE STYLES ===== */
+        .section-title {
+            color: #2c5282;
+            text-align: left;
+            margin: 30px 0 15px 0;
+            font-size: 20px;
+            border-bottom: 2px solid #4299e1;
+            padding-bottom: 5px;
+        }
+
+        /* White box that holds activity boxes */
+        .activity-row {
+            background-color: white;
+            border: 2px solid #4299e1;
+            padding: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;  /* Clears float */
+        }
+
+        /* Small yellow activity boxes */
+        .activity-box {
+            width: 60px;
+            height: 60px;
+            background-color: #fef3c7;  /* Light yellow */
+            border: 1px solid #f59e0b;   /* Orange border */
+            float: left;
+            margin: 5px;
+            text-align: center;
+            line-height: 60px;  /* Vertically centers text */
+            font-size: 12px;
+            color: #92400e;
+            text-decoration: none;  /* Removes underline from links */
+            display: block;  /* Makes <a> tag behave like a box */
+            cursor: pointer;
+        }
+
+        .activity-box:hover {
+            background-color: #fbbf24;  /* Darker yellow on hover */
+        }
+
+        /* Activity display area - shows when you click an activity */
+        .activity-display {
+            background-color: white;
+            border: 3px solid #4299e1;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: none; /* Hidden by default */
+        }
+
+        .activity-display.active {
+            display: block;
+        }
+
+        .close-activity {
+            background-color: #e53e3e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .close-activity:hover {
+            background-color: #c53030;
+        }
+
+        /* Iframe to show the activity */
+        .activity-iframe {
+            width: 100%;
+            height: 500px;
+            border: 2px solid #e2e8f0;
+        }
+
+        /* ===== SIGNUP PAGE STYLES ===== */
+        .signup-box {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .signup-title {
+            font-size: 40px;
+            color: #2c5282;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            color: #2c5282;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #4299e1;
+            font-size: 16px;
+        }
+
+        .register-btn {
+            background-color: #4299e1;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .register-btn:hover {
+            background-color: #2c5282;
+        }
+
+        /* Utility class to clear floats */
+        .clear {
+            clear: both;
+        }
+
+        /* Hides pages that are not active */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         NAVIGATION BAR - Same on every page
+         ============================================ -->
+    <nav>
+        <div class="logo">SEMI-FINAL PROJECT</div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="showPage('home')">HOME</a></li>
+            <li><a href="#" onclick="showPage('about')">ABOUT</a></li>
+            <li><a href="#" onclick="showPage('archive')">ARCHIVE</a></li>
+            <li><a href="#" onclick="showPage('signup')">SIGNUP</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============================================
+         MAIN CONTAINER - Holds all pages
+         ============================================ -->
+    <div class="container">
+
+        <!-- ============================================
+             PAGE 1: HOME PAGE
+             ============================================ -->
+        <div id="home" class="page">
+            <div class="design-box">
+                <h1 class="big-title">WELCOME TO MY WEBSITE!</h1>
+                <p class="subtitle">HELLO IM STEVEN CREATOR OF THIS WEBSITE</p>
+                
+                <div class="tech-buttons">
+                    <a href="#" class="tech-btn" onclick="showPage('archive'); return false;">HTML</a>
+                    <a href="#" class="tech-btn" onclick="showPage('archive'); return false;">CSS</a>
+                    <a href="#" class="tech-btn" onclick="showPage('archive'); return false;">JAVASCRIPT</a>
+                    <a href="#" class="tech-btn" onclick="showPage('archive'); return false;">OTHERS</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             PAGE 2: ABOUT PAGE
+             ============================================ -->
+        <div id="about" class="page hidden">
+            <div class="box about-box">
+                <div class="picture-box" style="background-image: url('ME.jpg');
+				background-size: cover; background-position:center;
+				border: 2px solid #4299e1;">
+				</div>
+                
+                <div class="info-section">
+                    <h2>INFORMATION ABOUT ME</h2>
+                    <ul class="info-list">
+                        <li><strong>NAME:</strong> Steven A. Bensurto</li>
+                        <li><strong>BIRTHDAY:</strong> July, 7, 2005</li>
+                        <li><strong>GENDER:</strong> Male</li>
+                        <li><strong>YR AND COURSE:</strong> 1st year and BSIT</li>
+                        <li><strong>SCHOOL:</strong> Arellano Univesity</li>
+                        <li><strong>NUMBER#:</strong> 09182837178</li>
+                        <li><strong>ABOUT ME:</strong> Hello guys, for the one who reading this i'm Steven</li>
+                        <li><strong></strong><strong></strong><strong></strong>20 yrs old. my hobby is basketball, games, reading.</li>
+                    </ul>
+                </div>
+                
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             PAGE 3: ARCHIVE PAGE
+             ============================================ -->
+        <div id="archive" class="page hidden">
+            
+            <!-- Activity Display Area (hidden until you click an activity) -->
+            <div id="activityDisplay" class="activity-display">
+                <button onclick="closeActivity()" class="close-activity">✕ CLOSE ACTIVITY</button>
+                <iframe id="activityFrame" class="activity-iframe" src=""></iframe>
+            </div>
+            
+            <h3 class="section-title">HTML ACTIVITIES</h3>
+            <div class="activity-row">
+                <div class="activity-box" onclick="showActivity('ACT 1_Heading.html')">1</div>
+                <div class="activity-box" onclick="showActivity('ACT 2_Paragraph.html')">2</div>
+                <div class="activity-box" onclick="showActivity('ACT 3_Line Break.html')">3</div>
+                <div class="activity-box" onclick="showActivity('ACT 4_Center Content.html')">4</div>
+                <div class="activity-box" onclick="showActivity('ACT 5_Horizontal Line.html')">5</div>
+                <div class="activity-box" onclick="showActivity('ACT 6_Attributes.html')">6</div>
+                <div class="activity-box" onclick="showActivity('ACT 7_Text Format.html')">7</div>
+                <div class="activity-box" onclick="showActivity('ACT 8_Links.html')">8</div>
+				<div class="activity-box" onclick="showActivity('COLORDEC.html')">9</div>
+                <div class="activity-box" onclick="showActivity('COLORHEX.html')">10</div>
+                <div class="activity-box" onclick="showActivity('COLORNAME.html')">11</div>
+                <div class="activity-box" onclick="showActivity('FONTFACE.html')">12</div>
+                <div class="activity-box" onclick="showActivity('FONTSIZE.html')">13</div>
+                <div class="activity-box" onclick="showActivity('IMAGE.html')">14</div>
+                <div class="activity-box" onclick="showActivity('IMAGEALIGN.HTML')">15</div>
+                <div class="activity-box" onclick="showActivity('IMAGEBORDER.html')">16</div>
+				<div class="activity-box" onclick="showActivity('IMAGELINK.html')">17</div>
+				<div class="activity-box" onclick="showActivity('IMAGE.html')">18</div>
+                <div class="activity-box" onclick="showActivity('LINK.html')">19</div>
+                <div class="activity-box" onclick="showActivity('MARQBGCOLOR.html')">20</div>
+                <div class="activity-box" onclick="showActivity('MARQUEE.html')">21</div>
+                <div class="activity-box" onclick="showActivity('MARQUEEBEHAVIOR.html')">22</div>
+				<div class="activity-box" onclick="showActivity('PHRASETAGS.html')">23</div>
+                <div class="clear"></div>
+            </div>
+
+            <h3 class="section-title">CSS ACTIVITIES</h3>
+            <div class="activity-row">
+                <div class="activity-box" onclick="showActivity('ActiveLink.html')">1</div>
+                <div class="activity-box" onclick="showActivity('ActiveNav.html')">2</div>
+                <div class="activity-box" onclick="showActivity('BGColor1.html')">3</div>
+                <div class="activity-box" onclick="showActivity('BGColor2.html')">4</div>
+                <div class="activity-box" onclick="showActivity('BGImage.html')">5</div>
+				<div class="activity-box" onclick="showActivity('BGImageFixed.html')">6</div>
+                <div class="activity-box" onclick="showActivity('BGImageFull.html')">7</div>
+                <div class="activity-box" onclick="showActivity('BGImageHV.html')">8</div>
+                <div class="activity-box" onclick="showActivity('BGImageNR.html')">9</div>
+                <div class="activity-box" onclick="showActivity('BGImagePos.html')">10</div>
+				<div class="activity-box" onclick="showActivity('BGImageSP.html')">11</div>
+                <div class="activity-box" onclick="showActivity('BorderColor.html')">12</div>
+                <div class="activity-box" onclick="showActivity('CenterLinks.html')">13</div>
+                <div class="activity-box" onclick="showActivity('ClassSelector.html')">14</div>
+                <div class="activity-box" onclick="showActivity('ClassSpecific.html')">15</div>
+				<div class="activity-box" onclick="showActivity('Comment.html')">16</div>
+                <div class="activity-box" onclick="showActivity('CSSBG.html')">17</div>
+                <div class="activity-box" onclick="showActivity('CSSBorder.html')">18</div>
+                <div class="activity-box" onclick="showActivity('CSSHW1.html')">19</div>
+                <div class="activity-box" onclick="showActivity('CSSHW2.html')">20</div>
+				<div class="activity-box" onclick="showActivity('Dividers.html')">21</div>
+				<div class="activity-box" onclick="showActivity('ExternalStyle.html')">22</div>
+				<div class="activity-box" onclick="showActivity('FixedNav.html')">23</div>
+				<div class="activity-box" onclick="showActivity('GroupSelectors.html')">24</div>
+				<div class="activity-box" onclick="showActivity('HorizontalNav.html')">25</div>
+				<div class="activity-box" onclick="showActivity('HoverEffect.html')">26</div>
+				<div class="activity-box" onclick="showActivity('IDSelector.html')">27</div>
+				<div class="activity-box" onclick="showActivity('Inlinetyle.html')">28</div>
+				<div class="activity-box" onclick="showActivity('InternalStyle.html')">29</div>
+				<div class="activity-box" onclick="showActivity('LetterSpacing.html')">30</div>
+				<div class="activity-box" onclick="showActivity('LineHeight.html')">31</div>
+				<div class="activity-box" onclick="showActivity('Margins.html')">32</div>
+				<div class="activity-box" onclick="showActivity('MarginsSides.html')">33</div>
+				<div class="activity-box" onclick="showActivity('MarginSP.html')">34</div>
+				<div class="activity-box" onclick="showActivity('MultipleClass.html')">35</div>
+				<div class="activity-box" onclick="showActivity('MultipleStyle.html')">36</div>
+				<div class="activity-box" onclick="showActivity('Opacity.html')">37</div>
+				<div class="activity-box" onclick="showActivity('Outline.html')">38</div>
+				<div class="activity-box" onclick="showActivity('PaddingSides.html')">39</div>
+				<div class="activity-box" onclick="showActivity('StickyNav.html')">40</div>
+				<div class="activity-box" onclick="showActivity('TextAlign.html')">41</div>
+				<div class="activity-box" onclick="showActivity('TextColor.html')">42</div>
+				<div class="activity-box" onclick="showActivity('TextColor2.html')">43</div>
+				<div class="activity-box" onclick="showActivity('TextDeco.html')">44</div>
+				<div class="activity-box" onclick="showActivity('TextDirection.html')">45</div>
+				<div class="activity-box" onclick="showActivity('TextIndent.html')">46</div>
+				<div class="activity-box" onclick="showActivity('TextShadow.html')">47</div>
+				<div class="activity-box" onclick="showActivity('TextTransform.html')">48</div>
+				<div class="activity-box" onclick="showActivity('VerticalNav.html')">49</div>
+				<div class="activity-box" onclick="showActivity('WordSpacing.html')">50</div>	
+                <div class="clear"></div>
+            </div>
+
+            <h3 class="section-title">JAVASCRIPT EXAMPLES</h3>
+            <div class="activity-row">
+                <div class="activity-box" onclick="showActivity('javascript1.html')">1</div>
+                <div class="activity-box" onclick="showActivity('javascript2.html')">2</div>
+                <div class="activity-box" onclick="showActivity('javascript3.html')">3</div>
+				<div class="activity-box" onclick="showActivity('javascript4.html')">4</div>
+				<div class="activity-box" onclick="showActivity('javascript5.html')">5</div>
+				<div class="activity-box" onclick="showActivity('javascript6.html')">1</div>
+                <div class="activity-box" onclick="showActivity('javascript7html')">2</div>
+                <div class="activity-box" onclick="showActivity('javascript8.html')">3</div>
+				<div class="activity-box" onclick="showActivity('javascript9.html')">4</div>
+				<div class="activity-box" onclick="showActivity('javascript10.html')">5</div>
+                <div class="clear"></div>
+            </div>
+
+            <h3 class="section-title">MORE PROJECT</h3>
+            <div class="activity-row">
+                <div class="activity-box" onclick="showActivity('Forms.html')">Form</div>
+                <div class="activity-box" onclick="showActivity('CALENDAR.html')">Calendar</div>
+				<div class="activity-box" onclick="showActivity('10 Favorite Website.html')">10 Favorite Website</div>
+                <div class="clear"></div>
+            </div>
+            
+        </div>
+
+        <!-- ============================================
+             PAGE 4: SIGNUP PAGE
+             ============================================ -->
+        <div id="signup" class="page hidden">
+            <div class="box signup-box">
+                <h1 class="signup-title">REGISTRATION</h1>
+                
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label>FIRST NAME:</label>
+                        <input type="text" name="firstname" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>LAST NAME:</label>
+                        <input type="text" name="lastname" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>CONTACT NUMBER:</label>
+                        <input type="tel" name="contact" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>EMAIL:</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>USERNAME:</label>
+                        <input type="text" name="username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>PASSWORD:</label>
+                        <input type="password" name="password" required>
+                    </div>
+                    
+                    <button type="submit" class="register-btn">REGISTER NOW</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    <script>
+        function showPage(pageName) {
+            var allPages = document.getElementsByClassName('page');
+            for (var i = 0; i < allPages.length; i++) {
+                allPages[i].classList.add('hidden');
+            }
+            document.getElementById(pageName).classList.remove('hidden');
+            return false;
+        }
+        
+        // Show activity in iframe within archive page
+        function showActivity(fileName) {
+            document.getElementById('activityFrame').src = fileName;
+            document.getElementById('activityDisplay').classList.add('active');
+            window.scrollTo(0, 0);
+        }
+        
+        // Close activity and return to archive view
+        function closeActivity() {
+            document.getElementById('activityDisplay').classList.remove('active');
+            document.getElementById('activityFrame').src = '';
+        }
+    </script>
+
+</body>
+</html>

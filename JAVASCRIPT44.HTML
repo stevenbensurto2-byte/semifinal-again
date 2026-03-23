@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show/Hide</title>
+</head>
+<body>
+    <button onclick="showMessage()">Show Message</button>
+    <button onclick="hideMessage()">Hide Message</button>
+    
+    <p id="secret" style="display: none;">🎉 BULAGA!! HAHAHAHAHA</p>
+
+    <script>
+        function showMessage() {
+            document.getElementById("secret").style.display = "block";
+        }
+        
+        function hideMessage() {
+            document.getElementById("secret").style.display = "none";
+        }
+    </script>
+</body>
+</html>

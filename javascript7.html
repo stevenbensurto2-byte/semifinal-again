@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { margin: 0; overflow: hidden; background: #0a0a0a; }
+canvas { display: block; }
+#controls { position: absolute; top: 10px; left: 10px; color: white; font-family: Arial; }
+</style>
+</head>
+<body>
+<div id="controls">Click to regenerate | Move mouse to change angle</div>
+<canvas id="canvas"></canvas>
+<script>
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let angle = Math.PI / 4;
+let startHue = 0;
+
+function drawBranch(x, y, len, angle, branchWidth, hue) {
+    ctx.beginPath();
+    ctx.save();
+    ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+    ctx.fillStyle = `hsl(${hue + 40}, 100%, 50%)`;
+    ctx.lineWidth = branchWidth;
+    ctx.translate(x, y);
+    ctx.rotate(angle);
+    
+    ctx.moveTo(0, 0);
+    ctx.lineTo(0, -len);
+    ctx.stroke();
+    
+    if(len < 10) {
+        ctx.beginPath();
+        ctx.arc(0, -len, 5, 0, Math.PI/2);
+        ctx.fill();
+        ctx.restore();
+        return;
+    }
+    
+    drawBranch(0, -len, len * 0.75, -0.5, branchWidth * 0.7, hue + 20);
+    drawBranch(0, -len, len * 0.75, 0.5, branchWidth * 0.7, hue + 20);
+    
+    ctx.restore();
+}
+
+function draw() {
+    ctx.fillStyle = 'rgba(10, 10, 10, 0.1)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    drawBranch(canvas.width / 2, canvas.height, 120, 0, 10, startHue);
+    
+    startHue += 0.5;
+    requestAnimationFrame(draw);
+}
+
+canvas.addEventListener('mousemove', (e) => {
+    angle = (e.clientX / canvas.width) * Math.PI;
+});
+
+canvas.addEventListener('click', () => {
+    startHue = Math.random() * 360;
+});
+
+draw();
+</script>
+</body>
+</html>

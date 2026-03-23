@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index-Semi Final</title>
+    <!-- INTERESTING FONT FOR HOME PAGE -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Russo+One&display=swap" rel="stylesheet">
+    <style>
+        /* ===== AI SAID THIS REMOVE DEFAULT SPACING FROM BROWSER ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ===== BODY - THE MAIN BACKGROUND ===== */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #87CEEB 0%, #E0F6FF 50%, #ffffff 100%);
+            min-height: 100vh;  
+        }
+
+        /* ===== THE NAVIGATION BAR ===== */
+        nav {
+            background-color: #E0F6FF;
+            border-bottom: 2px solid #4299e1;
+            padding: 20px;
+            overflow: hidden; 
+        }
+
+        /* ===== THE TITLE "SEMI-FINAL PROJECT" ===== */
+        .logo {
+            float: left;
+            font-size: 18px;
+            color: #2c5282;
+            font-weight: bold;
+        }
+
+        /* ===== THE "HOME, ABOUT, ARCHIVE, AND SIGNUP" ===== */
+        .nav-links {
+            float: right;
+            list-style: none;  
+        }
+
+        /* ===== PARA MAGING HORIZONTAL" ===== */
+        .nav-links li {
+            display: inline-block; 
+            margin-left: 20px;
+        }
+
+        /* ===== PARA SA PAG-TANGGAL SA UNDERLINE NG NAV " ===== */
+        .nav-links a {
+            text-decoration: none;
+            color: #2c5282;
+            font-weight: bold;
+        }
+
+        /* ===== PARA SA HOVER EFFECT" ===== */
+        .nav-links a:hover {
+            color: #4299e1;
+            text-decoration: underline;
+        }
+
+        /* ===== THE MAIN CONTAINER ===== */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ===== THE WHITE BOX ===== */
+        .box {
+            background-color: white;
+            border: 2px solid #4299e1;
+            padding: 40px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        /* ============================== THE HOME PAGE ============================== */
+		
+		/* ===== THE HOME PAGE WITH COOL FONT ===== */
+		.home-container {
+			font-family: 'Orbitron', sans-serif; /* COOL SCI-FI FONT */
+		}
+
+		.big-title {
+			font-size: 70px;
+			color: #2c5282;
+			margin: 40px 0;
+			letter-spacing: 5px;
+			font-weight: 900;
+			text-transform: uppercase;
+			text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+		}
+
+		.subtitle {
+			font-size: 24px;
+			color: #4a5568;
+			margin-bottom: 40px;
+			font-family: 'Russo One', sans-serif; /* BOLD SPORTY FONT */
+			letter-spacing: 3px;
+		}
+
+		/* Tech buttons (HTML, CSS, JS) */
+		.tech-buttons {
+			margin-top: 40px;
+		}
+
+		.tech-btn {
+			display: inline-block;
+			background-color: white;
+			border: 3px solid #2c5282;
+			color: #2c5282;
+			padding: 15px 40px;
+			margin: 0 20px;
+			text-decoration: none;
+			font-weight: bold;
+			font-family: 'Orbitron', sans-serif;
+			font-size: 16px;
+			letter-spacing: 2px;
+			transition: all 0.3s ease;
+			text-transform: uppercase;
+		}
+
+		.tech-btn:hover {
+			background-color: #4299e1;
+			color: white;
+			border-color: #4299e1;
+			transform: translateY(-3px);
+			box-shadow: 0 5px 15px rgba(66, 153, 225, 0.4);
+		}
+
+		/* ===== DESIGN BOX WITH BACKGROUND IMAGE ===== */
+		.design-box {
+			background-image: url('blue2.jpg');  
+			background-size: cover;              
+			background-position: center;         
+			background-repeat: no-repeat;        
+			border: 3px solid #2c5282;          
+			padding: 60px 40px;
+			margin: 20px 0;
+			text-align: center;
+			border-radius: 15px;                 
+			box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+			position: relative;
+			overflow: hidden;
+		}
+
+		.design-box::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(135, 206, 235, 0.15);
+			z-index: 0;
+		}
+
+		.design-box .home-content {
+			position: relative;
+			z-index: 1;
+		}
+
+		.design-box .big-title {
+			color: white;
+			text-shadow: 4px 4px 8px rgba(0,0,0,0.7); 
+			margin: 40px 0;
+			letter-spacing: 8px;
+			font-size: 65px;
+			font-family: 'Orbitron', sans-serif;
+			font-weight: 900;
+		}
+		
+		.design-box .subtitle {
+			color: white;
+			text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+			margin-bottom: 50px;
+			font-size: 26px;
+			font-family: 'Russo One', sans-serif;
+			letter-spacing: 4px;
+		}
+
+		.design-box .tech-btn {
+			display: inline-block;
+			background-color: rgba(224, 246, 255, 0.95);
+			border: 3px solid #2c5282;
+			color: #2c5282;
+			padding: 18px 45px;
+			margin: 0 15px;
+			text-decoration: none;
+			font-weight: bold;
+			font-family: 'Orbitron', sans-serif;
+			font-size: 14px;
+			letter-spacing: 2px;
+			transition: all 0.3s ease;
+			text-transform: uppercase;
+			border-radius: 5px;
+		}
+
+		.design-box .tech-btn:hover {
+			background-color: #2c5282;
+			color: white;
+			border-color: white;
+			transform: translateY(-5px) scale(1.05);
+			box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+		}
+
+        /* ============================== THE ABOUT PAGE ============================== */
+        .about-box {
+            overflow: hidden;  
+            text-align: left;
+        }
+		
+        .picture-box {
+            width: 250px;
+            height: 400px;
+            background-color: #f7fafc;
+            border: 2px dashed #4299e1;
+            float: left;
+            margin-right: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-size: 40px;
+            color: #718096;
+        }
+
+        .info-section h2 {
+            color: #2c5282;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #4299e1;
+            padding-bottom: 10px;
+        }
+
+        .info-list {
+            list-style: none;
+            line-height: 2.5;
+            font-size: 18px;
+        }
+
+        .info-list strong {
+            color: #2c5282;
+            display: inline-block;
+            width: 150px;
+        }
+
+        /* ============================== THE ARCHIVE PAGE ============================== */
+        .section-title {
+            color: #2c5282;
+            text-align: left;
+            margin: 30px 0 15px 0;
+            font-size: 20px;
+            border-bottom: 2px solid #4299e1;
+            padding-bottom: 5px;
+        }
+
+        .activity-row {
+            background-color: white;
+            border: 2px solid #4299e1;
+            padding: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;  
+        }
+
+        .activity-box {
+            width: 60px;
+            height: 60px;
+            background-color: #fef3c7;  
+            border: 1px solid #f59e0b;   
+            float: left;
+            margin: 5px;
+            text-align: center;
+            line-height: 60px;  
+            font-size: 16px;
+			font-weight: bold;
+            color: #92400e;
+            text-decoration: none; 
+            display: block;  
+            cursor: pointer;
+        }
+
+        .activity-box:hover {
+            background-color: #fbbf24;
+        }
+
+        /* ITO UNG NAG BOX PARA MAKITA UNG ACTIVITY */
+        .activity-display {
+            background-color: white;
+            border: 3px solid #4299e1;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: none; 
+        }
+
+        .activity-display.active {
+            display: block;
+        }
+
+        /* ===== NAVIGATION BUTTONS FOR ACTIVITIES ===== */
+        .activity-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f7fafc;
+            border-radius: 5px;
+        }
+
+        .nav-btn {
+            background-color: #4299e1;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .nav-btn:hover {
+            background-color: #2c5282;
+        }
+
+        .nav-btn:disabled {
+            background-color: #cbd5e0;
+            cursor: not-allowed;
+        }
+
+        .activity-counter {
+            color: #2c5282;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .close-activity {
+            background-color: #e53e3e;
+            color: white;
+            border: DOUBLE;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .close-activity:hover {
+            background-color: #c53030;
+        }
+
+        /* ITO UNG NAG SHO-SHOW NG ACTIVITY SA BOX */
+        .activity-iframe {
+            width: 100%;
+            height: 500px;
+            border: 2px solid #e2e8f0;
+        }
+
+        /* ============================== THE SIGNUP PAGE ============================== */
+        
+		.signup-box {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .signup-title {
+            font-size: 40px;
+            color: #2c5282;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            color: #2c5282;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #4299e1;
+            font-size: 16px;
+        }
+
+        .register-btn {
+            background-color: #4299e1;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .register-btn:hover {
+            background-color: #2c5282;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========================================================================================
+         NAVIGATION BAR - Same on every page
+         ======================================================================================== -->
+    <nav>
+        <div class="logo">SEMI-FINAL PROJECT</div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="showPage('home')">HOME</a></li>
+            <li><a href="#" onclick="showPage('about')">ABOUT</a></li>
+            <li><a href="#" onclick="showPage('archive')">ARCHIVE</a></li>
+            <li><a href="#" onclick="showPage('signup')">SIGNUP</a></li>
+        </ul>
+    </nav>
+
+    <!-- ========================================================================================
+         MAIN CONTAINER - Holds all pages
+         ======================================================================================== -->
+    <div class="container">
+
+        <!-- ============================================
+              HOME PAGE WITH COOL FONT
+             ============================================ -->
+        <div id="home" class="page home-container">
+            <div class="design-box">
+                <div class="home-content">
+                    <h1 class="big-title">WELCOME TO MY WEBSITE!</h1>
+                    <p class="subtitle">HELLO IM STEVEN CREATOR OF THIS WEBSITE</p>
+                    
+                    <div class="tech-buttons">
+                        <a href="#" class="tech-btn" onclick="showPage('archive'); return false;">HTML</a>
+                        <a href="#" class="tech-btn" onclick="showPage('archive'); return false;">CSS</a>
+                        <a href="#" class="tech-btn" onclick="showPage('archive'); return false;">JAVASCRIPT</a>
+                        <a href="#" class="tech-btn" onclick="showPage('archive'); return false;">OTHERS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+			 ABOUT PAGE
+             ============================================ -->
+        <div id="about" class="page hidden">
+            <div class="box about-box">
+                <div class="picture-box" style="background-image: url('ME.jpg');
+				background-size: cover; background-position:center;
+				border: 2px solid #4299e1;">
+				</div>
+                
+                <div class="info-section">
+                    <h2>INFORMATION ABOUT ME</h2>
+                    <ul class="info-list">
+                        <li><strong>NAME:</strong> Steven A. Bensurto</li>
+                        <li><strong>BIRTHDAY:</strong> July, 7, 2005</li>
+                        <li><strong>GENDER:</strong> Male</li>
+                        <li><strong>YR AND COURSE:</strong> 1st year and BSIT</li>
+                        <li><strong>SCHOOL:</strong> Arellano Univesity</li>
+                        <li><strong>NUMBER#:</strong> 09182837178</li>
+                        <li><strong>ABOUT ME:</strong> Hello guys, for the one who reading this i'm Steven</li>
+                        <li><strong></strong><strong></strong><strong></strong>20 yrs old. my hobby is basketball, games, reading.</li>
+                    </ul>
+                </div>
+                
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <!-- ============================================
+              ARCHIVE PAGE WITH SEPARATE COUNTERS
+             ============================================ -->
+        <div id="archive" class="page hidden">
+            
+            <!-- Activity Display Area with Separate Counters -->
+            <div id="activityDisplay" class="activity-display">
+                <!-- Navigation Bar with Previous/Next buttons -->
+                <div class="activity-nav">
+                    <button id="prevBtn" class="nav-btn" onclick="prevActivity()">← PREVIOUS</button>
+                    <span id="activityCounter" class="activity-counter">HTML Activity 1 of 23</span>
+                    <div>
+                        <button id="nextBtn" class="nav-btn" onclick="nextActivity()">NEXT →</button>
+                        <button onclick="closeActivity()" class="close-activity">✕ CLOSE</button>
+                    </div>
+                </div>
+                <iframe id="activityFrame" class="activity-iframe" src=""></iframe>
+            </div>
+            
+            <h3 class="section-title">HTML ACTIVITIES</h3>
+            <div class="activity-row" id="htmlSection">
+                <div class="activity-box" onclick="showActivity(0, 'html')">1</div>
+                <div class="activity-box" onclick="showActivity(1, 'html')">2</div>
+                <div class="activity-box" onclick="showActivity(2, 'html')">3</div>
+                <div class="activity-box" onclick="showActivity(3, 'html')">4</div>
+                <div class="activity-box" onclick="showActivity(4, 'html')">5</div>
+                <div class="activity-box" onclick="showActivity(5, 'html')">6</div>
+                <div class="activity-box" onclick="showActivity(6, 'html')">7</div>
+                <div class="activity-box" onclick="showActivity(7, 'html')">8</div>
+				<div class="activity-box" onclick="showActivity(8, 'html')">9</div>
+                <div class="activity-box" onclick="showActivity(9, 'html')">10</div>
+                <div class="activity-box" onclick="showActivity(10, 'html')">11</div>
+                <div class="activity-box" onclick="showActivity(11, 'html')">12</div>
+                <div class="activity-box" onclick="showActivity(12, 'html')">13</div>
+                <div class="activity-box" onclick="showActivity(13, 'html')">14</div>
+                <div class="activity-box" onclick="showActivity(14, 'html')">15</div>
+				<div class="activity-box" onclick="showActivity(15, 'html')">16</div>
+				<div class="activity-box" onclick="showActivity(16, 'html')">17</div>
+				<div class="activity-box" onclick="showActivity(17, 'html')">18</div>
+                <div class="activity-box" onclick="showActivity(18, 'html')">19</div>
+                <div class="activity-box" onclick="showActivity(19, 'html')">20</div>
+                <div class="activity-box" onclick="showActivity(20, 'html')">21</div>
+                <div class="activity-box" onclick="showActivity(21, 'html')">22</div>
+				<div class="activity-box" onclick="showActivity(22, 'html')">23</div>
+                <div class="clear"></div>
+            </div>
+
+            <h3 class="section-title">CSS ACTIVITIES</h3>
+            <div class="activity-row" id="cssSection">
+                <div class="activity-box" onclick="showActivity(0, 'css')">1</div>
+                <div class="activity-box" onclick="showActivity(1, 'css')">2</div>
+                <div class="activity-box" onclick="showActivity(2, 'css')">3</div>
+                <div class="activity-box" onclick="showActivity(3, 'css')">4</div>
+                <div class="activity-box" onclick="showActivity(4, 'css')">5</div>
+				<div class="activity-box" onclick="showActivity(5, 'css')">6</div>
+                <div class="activity-box" onclick="showActivity(6, 'css')">7</div>
+                <div class="activity-box" onclick="showActivity(7, 'css')">8</div>
+                <div class="activity-box" onclick="showActivity(8, 'css')">9</div>
+                <div class="activity-box" onclick="showActivity(9, 'css')">10</div>
+				<div class="activity-box" onclick="showActivity(10, 'css')">11</div>
+                <div class="activity-box" onclick="showActivity(11, 'css')">12</div>
+                <div class="activity-box" onclick="showActivity(12, 'css')">13</div>
+                <div class="activity-box" onclick="showActivity(13, 'css')">14</div>
+                <div class="activity-box" onclick="showActivity(14, 'css')">15</div>
+				<div class="activity-box" onclick="showActivity(15, 'css')">16</div>
+                <div class="activity-box" onclick="showActivity(16, 'css')">17</div>
+                <div class="activity-box" onclick="showActivity(17, 'css')">18</div>
+                <div class="activity-box" onclick="showActivity(18, 'css')">19</div>
+                <div class="activity-box" onclick="showActivity(19, 'css')">20</div>
+				<div class="activity-box" onclick="showActivity(20, 'css')">21</div>
+				<div class="activity-box" onclick="showActivity(21, 'css')">22</div>
+				<div class="activity-box" onclick="showActivity(22, 'css')">23</div>
+				<div class="activity-box" onclick="showActivity(23, 'css')">24</div>
+				<div class="activity-box" onclick="showActivity(24, 'css')">25</div>
+				<div class="activity-box" onclick="showActivity(25, 'css')">26</div>
+				<div class="activity-box" onclick="showActivity(26, 'css')">27</div>
+				<div class="activity-box" onclick="showActivity(27, 'css')">28</div>
+				<div class="activity-box" onclick="showActivity(28, 'css')">29</div>
+				<div class="activity-box" onclick="showActivity(29, 'css')">30</div>
+				<div class="activity-box" onclick="showActivity(30, 'css')">31</div>
+				<div class="activity-box" onclick="showActivity(31, 'css')">32</div>
+				<div class="activity-box" onclick="showActivity(32, 'css')">33</div>
+				<div class="activity-box" onclick="showActivity(33, 'css')">34</div>
+				<div class="activity-box" onclick="showActivity(34, 'css')">35</div>
+				<div class="activity-box" onclick="showActivity(35, 'css')">36</div>
+				<div class="activity-box" onclick="showActivity(36, 'css')">37</div>
+				<div class="activity-box" onclick="showActivity(37, 'css')">38</div>
+				<div class="activity-box" onclick="showActivity(38, 'css')">39</div>
+				<div class="activity-box" onclick="showActivity(39, 'css')">40</div>
+				<div class="activity-box" onclick="showActivity(40, 'css')">41</div>
+				<div class="activity-box" onclick="showActivity(41, 'css')">42</div>
+				<div class="activity-box" onclick="showActivity(42, 'css')">43</div>
+				<div class="activity-box" onclick="showActivity(43, 'css')">44</div>
+				<div class="activity-box" onclick="showActivity(44, 'css')">45</div>
+				<div class="activity-box" onclick="showActivity(45, 'css')">46</div>
+				<div class="activity-box" onclick="showActivity(46, 'css')">47</div>
+				<div class="activity-box" onclick="showActivity(47, 'css')">48</div>
+				<div class="activity-box" onclick="showActivity(48, 'css')">49</div>
+				<div class="activity-box" onclick="showActivity(49, 'css')">50</div>	
+                <div class="clear"></div>
+            </div>
+
+            <h3 class="section-title">JAVASCRIPT EXAMPLES</h3>
+            <div class="activity-row" id="jsSection">
+                <div class="activity-box" onclick="showActivity(0, 'js')">1</div>
+                <div class="activity-box" onclick="showActivity(1, 'js')">2</div>
+                <div class="activity-box" onclick="showActivity(2, 'js')">3</div>
+				<div class="activity-box" onclick="showActivity(3, 'js')">4</div>
+				<div class="activity-box" onclick="showActivity(4, 'js')">5</div>
+				<div class="activity-box" onclick="showActivity(5, 'js')">6</div>
+                <div class="activity-box" onclick="showActivity(6, 'js')">7</div>
+                <div class="activity-box" onclick="showActivity(7, 'js')">8</div>
+				<div class="activity-box" onclick="showActivity(8, 'js')">9</div>
+				<div class="activity-box" onclick="showActivity(9, 'js')">10</div>
+                <div class="clear"></div>
+            </div>
+
+            <h3 class="section-title">MORE PROJECT</h3>
+            <div class="activity-row" id="moreSection">
+                <div class="activity-box" onclick="showActivity(0, 'more')">Form</div>
+                <div class="activity-box" onclick="showActivity(1, 'more')">CLNDR</div>
+				<div class="activity-box" onclick="showActivity(2, 'more')">10FW</div>
+                <div class="clear"></div>
+            </div>
+            
+        </div>
+
+        <!-- ============================================
+              SIGNUP PAGE
+             ============================================ -->
+        <div id="signup" class="page hidden">
+            <div class="box signup-box">
+                <h1 class="signup-title">REGISTRATION</h1>
+                
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label>FIRST NAME:</label>
+                        <input type="text" name="firstname" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>LAST NAME:</label>
+                        <input type="text" name="lastname" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>CONTACT NUMBER:</label>
+                        <input type="tel" name="contact" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>EMAIL:</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>USERNAME:</label>
+                        <input type="text" name="username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>PASSWORD:</label>
+                        <input type="password" name="password" required>
+                    </div>
+                    
+                    <button type="submit" class="register-btn">REGISTER NOW</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ============================================
+         JAVASCRIPT WITH SEPARATE COUNTERS
+         ============================================ -->
+    <script>
+        // Separate arrays for each section
+        var htmlActivities = [
+            'ACT 1_Heading.html', 'ACT 2_Paragraph.html', 'ACT 3_Line Break.html',
+            'ACT 4_Center Content.html', 'ACT 5_Horizontal Line.html', 'ACT 6_Attributes.html',
+            'ACT 7_Text Format.html', 'ACT 8_Links.html', 'COLORDEC.html', 'COLORHEX.html',
+            'COLORNAME.html', 'FONTFACE.html', 'FONTSIZE.html', 'IMAGE.html',
+            'IMAGEALIGN.HTML', 'IMAGEBORDER.html', 'IMAGELINK.html', 'IMAGE.html',
+            'LINK.html', 'MARQBGCOLOR.html', 'MARQUEE.html', 'MARQUEEBEHAVIOR.html', 'PHRASETAGS.html'
+        ];
+
+        var cssActivities = [
+            'ActiveLink.html', 'ActiveNav.html', 'BGColor1.html', 'BGColor2.html',
+            'BGImage.html', 'BGImageFixed.html', 'BGImageFull.html', 'BGImageHV.html',
+            'BGImageNR.html', 'BGImagePos.html', 'BGImageSP.html', 'BorderColor.html',
+            'CenterLinks.html', 'ClassSelector.html', 'ClassSpecific.html', 'Comment.html',
+            'CSSBG.html', 'CSSBorder.html', 'CSSHW1.html', 'CSSHW2.html',
+            'Dividers.html', 'ExternalStyle.html', 'FixedNav.html', 'GroupSelectors.html',
+            'HorizontalNav.html', 'HoverEffect.html', 'IDSelector.html', 'Inlinetyle.html',
+            'InternalStyle.html', 'LetterSpacing.html', 'LineHeight.html', 'Margins.html',
+            'MarginsSides.html', 'MarginSP.html', 'MultipleClass.html', 'MultipleStyle.html',
+            'Opacity.html', 'Outline.html', 'PaddingSides.html', 'StickyNav.html',
+            'TextAlign.html', 'TextColor.html', 'TextColor2.html', 'TextDeco.html',
+            'TextDirection.html', 'TextIndent.html', 'TextShadow.html', 'TextTransform.html',
+            'VerticalNav.html', 'WordSpacing.html'
+        ];
+
+        var jsActivities = [
+            'JAVASCRIPT.html', 'JAVASCRIPT22.html', 'JAVASCRIPT33.html', 'JAVASCRIPT44.html',
+            'JAVASCRIP552.html', 'JAVASCRIPT66.html', 'JAVASCRIPT77.html', 'JAVASCRIPT88.html',
+            'JAVASCRIPT99.html', 'JAVASCRIPT100.html'
+        ];
+
+        var moreActivities = [
+            'Forms.html', 'CALENDAR.html', '10 Favorite Website.html'
+        ];
+
+        var currentSection = '';
+        var currentIndex = 0;
+        var currentArray = [];
+
+        function showPage(pageName) {
+            var allPages = document.getElementsByClassName('page');
+            for (var i = 0; i < allPages.length; i++) {
+                allPages[i].classList.add('hidden');
+            }
+            document.getElementById(pageName).classList.remove('hidden');
+            return false;
+        }
+        
+        // Show activity with section-specific counter
+        function showActivity(index, section) {
+            currentSection = section;
+            currentIndex = index;
+            
+            // Set current array based on section
+            if (section === 'html') currentArray = htmlActivities;
+            else if (section === 'css') currentArray = cssActivities;
+            else if (section === 'js') currentArray = jsActivities;
+            else if (section === 'more') currentArray = moreActivities;
+            
+            // Load the activity
+            document.getElementById('activityFrame').src = currentArray[index];
+            document.getElementById('activityDisplay').classList.add('active');
+            updateNavButtons();
+            window.scrollTo(0, 0);
+        }
+
+        // Go to previous activity
+        function prevActivity() {
+            if (currentIndex > 0) {
+                showActivity(currentIndex - 1, currentSection);
+            }
+        }
+
+        // Go to next activity
+        function nextActivity() {
+            if (currentIndex < currentArray.length - 1) {
+                showActivity(currentIndex + 1, currentSection);
+            }
+        }
+
+        // Update navigation buttons with section-specific counter
+        function updateNavButtons() {
+            var sectionName = currentSection.toUpperCase();
+            var displayText = sectionName + ' Activity ' + (currentIndex + 1) + ' of ' + currentArray.length;
+            
+            document.getElementById('activityCounter').textContent = displayText;
+            
+            // Disable/enable previous button
+            document.getElementById('prevBtn').disabled = (currentIndex === 0);
+            
+            // Disable/enable next button
+            document.getElementById('nextBtn').disabled = (currentIndex === currentArray.length - 1);
+        }
+        
+        // Close activity and return to archive view
+        function closeActivity() {
+            document.getElementById('activityDisplay').classList.remove('active');
+            document.getElementById('activityFrame').src = '';
+        }
+    </script>
+
+</body>
+</html>

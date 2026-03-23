@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Message</title>
+</head>
+<body>
+    <h1 id="output">Click for a message</h1>
+    <button onclick="randomMessage()">Get Message</button>
+
+    <script>
+        function randomMessage() {
+            const messages = [
+                "You are awesome! 🌟",
+                "Have a great day! ☀️",
+                "Keep learning! 📚",
+                "You got this! 💪",
+                "JavaScript is fun! 🎉"
+            ];
+            
+            const randomNumber = Math.floor(Math.random() * 5);
+            document.getElementById("output").innerHTML = messages[randomNumber];
+        }
+    </script>
+</body>
+</html>
